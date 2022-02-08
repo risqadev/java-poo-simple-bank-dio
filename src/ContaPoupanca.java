@@ -1,16 +1,9 @@
 
 public class ContaPoupanca extends Conta {
 	
-	public ContaPoupanca(Cliente cliente) {
-		super(cliente);
-	}
-
-	@Override
-	public void imprimirSaldo() {
-		
-		System.out.println("=== Saldo de conta poupanca ===");
-		
-		super.imprimirInformacoes();
+	public ContaPoupanca(Agencia agencia, Cliente cliente) {
+		super(agencia, cliente);
+		super.tipo = "Conta Poupanca";
 	}
 	
 }
