@@ -2,11 +2,16 @@
 public class Main {
 	
 	public static void main(String[] args) {
-		Cliente cliente1 = new Cliente("Fulano de Tal");
-		Cliente cliente2 = new Cliente("Ciclano da Quinta");
+		Banco rBank = new Banco(254, "rBank");
 		
-		Conta conta1c = new ContaCorrente(cliente1);
-		Conta conta2p = new ContaPoupanca(cliente2);
+		Agencia ag1 = new Agencia(rBank, "Agencia Centro", new Endereco("Rua Astolfo Sardinha", 1234));
+		Agencia ag2 = new Agencia(rBank, "Agencia Bras", new Endereco("Av. Godofredo Lambuja", 9876));
+				
+		Cliente cliente1 = new Cliente(23409876400l, "Fulano de Tal");
+		Cliente cliente2 = new Cliente(12365478910l, "Ciclano da Quinta");
+		
+		Conta conta1c = new ContaCorrente(ag1, cliente1);
+		Conta conta2p = new ContaPoupanca(ag2, cliente2);
 		
 		conta1c.imprimirSaldo();
 		conta2p.imprimirSaldo();
